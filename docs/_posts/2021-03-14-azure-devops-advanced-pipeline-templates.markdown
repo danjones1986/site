@@ -3,6 +3,7 @@ layout: post
 title: Azure Pipelines
 subtitle: Advanced Pipeline Templates
 description: How to manipulate Azure Pipeline templates
+author: Dan Jones
 date: 2021-03-14 09:00:00
 tags: 
 - azure pipelines 
