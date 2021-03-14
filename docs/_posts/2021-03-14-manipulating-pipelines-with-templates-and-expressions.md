@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Azure Pipelines
-subtitle: Manipulating Pipelines with Templates and Expressions
+title: Manipulating Pipelines with Templates and Expressions
+subtitle: Azure Pipelines
 description: How to manipulate an Azure Pipeline, intercept calls, enforce  standards, replace functionality, using templates and compile time expressions.
 date: 2021-03-14 18:00:00
 author: Dan Jones

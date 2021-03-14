@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Azure DevOps
-subtitle: Advanced Pipeline Templates with Expressions
+title: Advanced Pipeline Templates with Expressions
+subtitle: Azure DevOps
 description: Azure Pipelines Extension Templates
 date: 2021-03-14 09:00:00
 author: Dan Jones
