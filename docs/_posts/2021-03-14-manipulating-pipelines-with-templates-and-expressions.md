@@ -5,7 +5,7 @@ subtitle: Azure Pipelines
 description: How to manipulate an Azure Pipeline using templates and expressions to enforce compliance, improve security and more.
 date: 2021-03-14 18:00:00
 author: Dan Jones
-tags: azure-pipelines azure-devops templates advanced
+tags: azure-pipelines azure-devops templates
 ---
 
 Beyond creating standard Azure DevOps Pipeline definitions, we can actually use templates to manipulate a pipelines definition. We can make scripts before or after tasks, or add stages based on certain condition, or choose to reject a pipeline if certain definitions may or may not exist.
