@@ -2,3 +2,9 @@
   link: /
 - name: Blog
   link: /blog/
+- name: Cookie Preferences
+  link: 'javascript: void(0);'
+  id: changePreferences
+- name: Privacy Policy
+  link: /privacy-policy/
+  
