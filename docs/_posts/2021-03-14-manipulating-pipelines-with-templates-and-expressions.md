@@ -2,7 +2,7 @@
 layout: post
 title: Manipulating Pipelines with Templates and Expressions
 subtitle: Azure Pipelines
-description: How to manipulate an Azure Pipeline, intercept calls, enforce  standards, replace functionality, using templates and compile time expressions.
+description: How to manipulate an Azure Pipeline using templates and expressions to enforce compliance, improve security and more.
 date: 2021-03-14 18:00:00
 author: Dan Jones
 tags: azure-pipelines azure-devops templates advanced
