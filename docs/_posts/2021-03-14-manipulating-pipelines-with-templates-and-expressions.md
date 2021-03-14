@@ -8,7 +8,7 @@ author: Dan Jones
 tags: azure-pipelines azure-devops templates advanced
 ---
 
-Beyond creating standard Azure DevOps Pipeline definitions, we can actually use templates and template extensions to manipulate a pipelines definition. We can make scripts before or after tasks, or add stages based on certain condition, or choose to reject a pipeline if certain definitions may or may not exist.
+Beyond creating standard Azure DevOps Pipeline definitions, we can actually use templates to manipulate a pipelines definition. We can make scripts before or after tasks, or add stages based on certain condition, or choose to reject a pipeline if certain definitions may or may not exist.
 
 By passing the stages, jobs or steps to a template, we can within the template read the definition, and manipulate it how we see fit.
 
