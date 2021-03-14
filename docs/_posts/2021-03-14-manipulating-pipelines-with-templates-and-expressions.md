@@ -96,8 +96,8 @@ parameters:
       value: 2
 
 steps:
-- ${{ each demoItem in parameters.demo }}`
-  - ${{ each pair in demoItem.segment }}`
+- ${{ each demoItem in parameters.demo }}:
+  - ${{ each pair in demoItem.segment }}:
     - script: echo "${{ pair.key }} - ${{ pair.key }}"
 ```
 {% endraw %}
