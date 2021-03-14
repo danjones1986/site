@@ -85,6 +85,7 @@ A conditional `expression` is compile time statement, which can be used for most
 
 The syntax is different, but ultimately similar.
 
+{% raw %}
 ```yml
 ...
 - ${{ if and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master')) }}:
@@ -93,9 +94,11 @@ The syntax is different, but ultimately similar.
     jobs:
   ...
 ```
+{% endraw %}
 
 There is no `if else` syntax, instead you would write 2 opposing if statements.
 
+{% raw %}
 ```yml
 steps:
   - ${{ if and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master')) }}:
@@ -103,6 +106,7 @@ steps:
   - ${{ if and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master')) }}:
     - script: echo "I'm not the master..."
 ```
+{% endraw %}
 
 - `ne` - Not equal, opposite to `eq`.
 
@@ -147,9 +151,12 @@ stages:
 ```
 
 To loop through stages, you use the `each` compile time expression, which would look like
+
+{% raw %}
 ```yml
-- ${{ each stageItem in parameters.stagesList }}:
+- ${{ each stageItem in parameters.stagesList }}: 
 ```
+{% endraw %}
 
 `stageItem` now contains the stage, in the form of the schema, so to access the stage name, I could use `stageItem.stage`, to access the display name, it would be `stageItem.displayName`.
 
@@ -163,15 +170,18 @@ Finally you can also loop on stageItem itself, which will return a key, value pa
 
 The following example will scan through the stages, and filter out any defined `dependsOn` segment.
 
-```yml
+{% raw %}
+```yaml
 steps:
   - ${{ each entry in stageItem }}:
     ${{ if ne(entry.key, 'dependsOn') }}:
       - ${{ entry.key }}: ${{ entry.value }}
 ```
+{% endraw %}
 
 Our template will be called `policy.yml` and take a parameter that contains out stages in the current pipeline, which changes our pipeline to the following.
 
+{% raw %}
 ```yml
 trigger: 
 - master
@@ -196,7 +206,8 @@ extends:
       - job: BuildHello
         steps:
         - script: echo 'Hello $(name) - Building'
-      - ${{ if and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/
+
+      - ${{ if and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/')) }}:
         - stage: Deploy
           dependsOn: Build
           jobs:
@@ -208,7 +219,7 @@ extends:
                   steps:
                   - script: echo 'Hello $(name) - Deployed'
 ```
-
+{% endraw %}
 
 
 
