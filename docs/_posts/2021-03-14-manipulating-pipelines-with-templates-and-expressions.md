@@ -69,7 +69,7 @@ parameters:
 
 steps:
 - script: echo "Begin running pipeline steps"
-- ${{ each step in paramters.stepList }}:
+- ${{ each step in parameters.stepList }}:
   - ${{ each pair in step }}:
       ${{ pair.key }}: ${{ pair.value }}  
 - script: echo "Finished running pipeline steps"
@@ -122,7 +122,7 @@ value - 2
 
 ### Throwing compile time errors with conditions
 
-In the above examples, we use the `script` task, which depending on the OS will execute in `bash` or `powershell`, which isn't great for reuseability, so what if we want to stop stop our pipeline from using it altogether?
+In the above examples, we use the `script` task, which depending on the OS will execute in `bash` or `powershell`, which isn't great for reusability, so what if we want to stop stop our pipeline from using it altogether?
 
 Our first step is to edit our definition and if the `script` task is detected, throw an error at compile time to stop the pipeline even starting.
 
@@ -175,7 +175,7 @@ resources:
   repositories:
   - repository: automation  # identifier
     type: git 
-    name: fabrikim/automation  # repository name (format depends on `type`)
+    name: fabrikam/automation  # repository name (format depends on `type`)
     ref: refs/heads/master  
 
 extends:
