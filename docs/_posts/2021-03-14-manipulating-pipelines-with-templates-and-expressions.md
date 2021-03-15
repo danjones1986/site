@@ -86,9 +86,10 @@ steps:
 - script: echo "Finished running pipeline steps"
 ```
 
-# Interate through the steps
-
+# Iterate through the steps
+{% raw %}
 In the above example you will notice `- ${{ each pair in step }}:`, which loops through the top level definition of the steps, which is a little confusing at first, but in reality, it's pretty simple, which I will try clarify with an example.
+{% endraw %}
 
 {% raw %}
 ```yml
