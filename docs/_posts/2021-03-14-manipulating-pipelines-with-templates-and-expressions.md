@@ -6,6 +6,7 @@ description: How to manipulate an Azure Pipeline using templates and expressions
 date: 2021-03-14 18:00:00
 author: Dan Jones
 tags: azure-pipelines azure-devops templates
+menubar_toc: true
 ---
 
 ### Introduction
