@@ -146,6 +146,8 @@ steps:
 
 There aren't many options for exceptions in Azure Pipelines, but by providing a message, followed by `: error`, an exception will be thrown at compile time, which will output your message on screen.
 
+If we want to say throw and error if a condition is met, else it will allow the predefined step to run, we do this with 2 `if` statements of opposing condition, since there is no `if, else` syntax within Pipelines.
+
 ### Enforcing standards with extension templates
 
 Lastly what if we wanted to enforce this through out the pipeline and ensure it can't be circumvented? We do this by changing how we use the template in the pipeline and use the `extends` syntax.
