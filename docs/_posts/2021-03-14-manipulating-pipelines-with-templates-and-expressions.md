@@ -251,7 +251,8 @@ There are many use cases for manipulating the pipeline using templates, avoiding
 
 There is a lot more things you could do, but the main point is these are abstracted from the pipeline, are repeatable and the consumer doesn't need to care about what, or how they are doing something, it should just do it.
 
-### References
+### Related resources
+
 [Azure Pipelines Expressions](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/expressions?view=azure-devops)
 [Azure Pipelines Templates](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops)
 [Azure Pipelines Schema Reference](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2Cparameter-schema)
