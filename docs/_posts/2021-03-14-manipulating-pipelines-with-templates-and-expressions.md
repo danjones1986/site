@@ -238,6 +238,19 @@ By using the examples above in regards to `steps` (stepList), you can apply the 
 
 Overall expressions and templates within Azure Pipelines are very powerful, allowing you to enforce your own standards and checks, allowing compliance and security to be built in by default in to every new pipeline by sharing them.
 
+### What kind of things can I do?
+
+There are many use cases for manipulating the pipeline using templates, avoiding you having to keep repeating you code in every pipeline, or just to enforce compliance. Here is just a few scenarios to get you started.
+
+* *Pushing notifications* to remote systems when a new stage, deployment job starts or ends, for auditing or updates service tickets.
+* *Avoid certain pipeline tasks being used* (like the script example discussed above), to ensure a consistent approach, or to help with security concerns.
+* *Restrict deployments* to specific branches to enhance security.
+* *Inserting steps* before or after steps defined in the pipeline run, maybe to get the environment in to a secure / useable state before a pipelines steps occur.
+* *Enforcing a branching strategy* by failing pipelines before they run if the correct branch isn't used. You could also check a pull requests source and target branches at runtime and fail if its not a correct transition.
+* *Checking with remote services* before deploying, to ensure certain checks have been passed before continuing.
+
+There is a lot more things you could do, but the main point is these are abstracted from the pipeline, are repeatable and the consumer doesn't need to care about what, or how they are doing something, it should just do it.
+
 ### References
 [Azure Pipelines Expressions](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/expressions?view=azure-devops)
 [Azure Pipelines Templates](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops)
