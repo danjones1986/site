@@ -3,7 +3,7 @@ layout: post
 title: Manipulating Pipelines with Templates and Expressions
 subtitle: Azure Pipelines
 description: How to manipulate an Azure Pipeline using templates and expressions to enforce compliance, improve security and more.
-date: 2021-03-16 12:00:00
+date: 2021-03-17 12:00:00
 author: Dan Jones
 tags: azure-pipelines azure-devops templates
 menubar_toc: true
