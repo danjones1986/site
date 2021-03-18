@@ -87,7 +87,7 @@ steps:
 - script: echo "Finished running pipeline steps"
 ```
 
-# Iterate through the steps
+### Iterate through the steps
 {% raw %}
 In the above example you will notice `- ${{ each pair in step }}:`, which loops through the top level definition of the steps, which is a little confusing at first, but in reality, it's pretty simple, which I will try clarify with an example.
 {% endraw %}
@@ -169,7 +169,7 @@ extends:
 
 The `extends` syntax is used at the top of the pipeline, with any `steps`, `jobs` or `stages` being passed in as parameters, so the template will have access to the entire set of pipeline tasks.
 
-Extension templates can be stored in another repository and shared with other pipelines, which is great for company policy templates, you can even use Azure DevOps environments approvals and checks section to enforce that a deployment must implement a given template or it won't be able to execute.
+Extension templates can be stored in another repository and shared with other pipelines, which is great for company policy templates.
 
 If you moved our templates file in to a repository called `automation`, we could then implement it by using a repository resource similar to the one below.
 
@@ -193,7 +193,7 @@ extends:
 
 When consuming extension templates from a shared repository, you need to be aware of the following;
 
-1. Local templates must have `@self` on the end when being imported in to the pipeline definition.
+*1* - Local templates must have `@self` on the end when being imported in to the pipeline definition.
 
 Before using an extension template.
 ```yml
@@ -211,8 +211,9 @@ steps:
 - template: ci/templates/build.yml@self
 ```
 
-2. Local template imports now become relative to `$(System.DefaultWorkingDirectory)`, instead of the pipeline directory (shown in the above example).
-3. If you have other templates you wish to use inside the extension template context, from the shared repository, they will need to be included relative to the extension templates folder.
+*2* - Local template imports now become relative to `$(System.DefaultWorkingDirectory)`, instead of the pipeline directory (shown in the above example).
+
+*3* - If you have other templates you wish to use inside the extension template context, from the shared repository, they will need to be included relative to the extension templates folder.
 
 If we have an extension template in a shared repository, lets say `extensions/policy.yml` and a reusable build template in the same repository `templates/build.yml`, then in the pipeline, we would use them together as follows.
 
@@ -240,16 +241,16 @@ Overall expressions and templates within Azure Pipelines are very powerful, allo
 
 ### What kind of things can I do?
 
-There are many use cases for manipulating the pipeline using templates, avoiding you having to keep repeating you code in every pipeline, or just to enforce compliance. Here is just a few scenarios to get you started.
+There are many use cases for manipulating the pipeline using templates, avoiding you having to keep repeating your code in every pipeline, or just to enforce compliance. Here is just a few scenarios to get you started.
 
-* **Pushing notifications** to remote systems when a new stage, deployment job starts or ends, for auditing or updates service tickets.
+* **Pushing notifications** to remote systems when a new stage or deployment job starts or ends, for auditing or updates to service tickets.
 * **Avoid certain pipeline tasks being used** (like the script example discussed above), to ensure a consistent approach, or to help with security concerns.
 * **Restrict deployments** to specific branches to enhance security.
-* **Injecting steps** before or after steps defined in the pipeline run, maybe to get the environment in to a secure or useable state before a pipelines steps occur.
+* **Injecting steps** before or after steps defined in the pipeline run, maybe to get the environment in to a secure or useable state before a pipeline executes its steps.
 * **Enforcing a branching strategy** by failing pipelines before they run if the correct branch isn't used. You could also check a pull requests source and target branches at runtime and fail if its not a correct transition.
-* **Checking with remote services** before deploying, to ensure certain checks have been passed before continuing.
+* **Checking with remote services** before deploying to ensure certain checks have been passed before continuing.
 
-There is a lot more things you could do, but the main point is these are abstracted from the pipeline, are repeatable and the consumer doesn't need to care about what, or how they are doing something, it should just do it.
+There are a lot more things you could do, but the main point is that these templates are abstracted from the pipeline. This has benefits of being repeatable and the consumer doesn't need to care about what, or how they are doing something, it should simply do it.
 
 ### Related resources
 
