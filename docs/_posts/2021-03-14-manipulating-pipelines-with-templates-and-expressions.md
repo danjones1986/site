@@ -30,7 +30,7 @@ Data types relevant to the context of manipulating our pipeline definitions with
 | stageList | sequence of stages |
 
 ### Passing steps into a template
-We will create a template (`build-policy.yml`), which takes pipeline steps as its parameter.
+We will create a template (`build-policy.yml`), which takes pipeline steps as it's parameter.
 
 {% raw %}
 ```yml
@@ -89,7 +89,7 @@ steps:
 
 ### Iterate through the steps
 {% raw %}
-In the above example you will notice `- ${{ each pair in step }}:`, which loops through the top level definition of the steps, which is a little confusing at first, but in reality, it's pretty simple, which I will try clarify with an example.
+In the above example you will notice `- ${{ each pair in step }}:`, which loops through the top level definition of the steps, which is a little confusing at first, but in reality, it's pretty simple, which I will try to clarify with an example.
 {% endraw %}
 
 {% raw %}
@@ -125,7 +125,7 @@ value - 2
 
 When a pipeline is first executed, as part of the normal checks, it will run any logic and perform any substitutions within `${{ }}` syntax, if this fails for any reason, it will output errors before starting the pipeline run, we can take advantage of this, by providing our own custom exception output.
 
-In the above examples, we use the `script` task, which depending on the OS will execute in `bash` or `powershell`, which isn't great for reusability, so what if we want to stop stop our pipeline from using it altogether?
+In the above examples, we use the `script` task, which depending on the OS will execute in `bash` or `powershell`, which isn't great for reusability, so what if we want to stop our pipeline from using it altogether?
 
 Our first step is to edit our definition and if the `script` task is detected, throw an error at compile time to stop the pipeline even starting.
 
@@ -150,11 +150,11 @@ steps:
 
 There aren't many options for exceptions in Azure Pipelines, but by providing a message, followed by `: error`, an exception will be thrown at compile time, which will output your message on screen.
 
-If we want to say throw an error if a condition is met, else it will allow the predefined step to run, we do this with 2 `if` statements of opposing condition, since there is no `if, else` syntax within Pipelines.
+If we want to say throw an error if a condition is met, else it will allow the predefined step to run, we do this with 2 `if` statements of opposing condition, since there is no `if, else` syntax within pipelines.
 
 ### Enforcing standards with extension templates
 
-Lastly what if we wanted to enforce this through out the pipeline and ensure it can't be circumvented? We do this by changing how we use the template in the pipeline and use the `extends` syntax.
+Lastly what if we wanted to enforce this throughout the pipeline? We do this by changing how we use the template in the pipeline and use the `extends` syntax.
 
 {% raw %}
 ```yml
@@ -169,7 +169,7 @@ extends:
 
 The `extends` syntax is used at the top of the pipeline, with any `steps`, `jobs` or `stages` being passed in as parameters, so the template will have access to the entire set of pipeline tasks.
 
-Extension templates can be stored in another repository and shared with other pipelines, which is great for company policy templates.
+Extension templates can be stored in a shared repository and used within a pipeline of a different repository, which is great for shared company policy templates.
 
 If you moved our templates file in to a repository called `automation`, we could then implement it by using a repository resource similar to the one below.
 
@@ -235,7 +235,7 @@ extends:
 
 ### Powerful stuff
 
-By using the examples above in regards to `steps` (stepList), you can apply the same processes over `jobs` (jobsList) and `stages` (stageList) too, and can get even more complex by iterating stages and their jobs, or even the jobs and their steps and apply your own logic in regards to the defined pipeline.
+By using the examples above in regard to `steps` (stepList), you can apply the same processes over `jobs` (jobsList) and `stages` (stageList) too, and can get even more complex by iterating stages and their jobs, or even the jobs and their steps and apply your own logic in regard to the defined pipeline.
 
 Overall expressions and templates within Azure Pipelines are very powerful, allowing you to enforce your own standards and checks, allowing compliance and security to be built in by default in to every new pipeline by sharing them.
 
@@ -246,11 +246,11 @@ There are many use cases for manipulating the pipeline using templates, avoiding
 * **Pushing notifications** to remote systems when a new stage or deployment job starts or ends, for auditing or updates to service tickets.
 * **Avoid certain pipeline tasks being used** (like the script example discussed above), to ensure a consistent approach, or to help with security concerns.
 * **Restrict deployments** to specific branches to enhance security.
-* **Injecting steps** before or after steps defined in the pipeline run, maybe to get the environment in to a secure or useable state before a pipeline executes its steps.
-* **Enforcing a branching strategy** by failing pipelines before they run if the correct branch isn't used. You could also check a pull requests source and target branches at runtime and fail if its not a correct transition.
+* **Injecting steps** before or after steps defined in the pipeline run, maybe to get the environment in to a secure or useable state before a pipeline executes it's steps.
+* **Enforcing a branching strategy** by failing pipelines before they run if the correct branch isn't used. You could also check a pull requests source and target branches at runtime and fail if it's not a correct transition.
 * **Checking with remote services** before deploying to ensure certain checks have been passed before continuing.
 
-There are a lot more things you could do, but the main point is that these templates are abstracted from the pipeline. This has benefits of being repeatable and the consumer doesn't need to care about what, or how they are doing something, it should simply do it.
+There are a lot more things you could do, but the main point is that these templates are abstracted from the pipeline. This has the benefit's of being repeatable and the consumer doesn't need to care about what, or how they are doing something, it should simply do it.
 
 ### Related resources
 
