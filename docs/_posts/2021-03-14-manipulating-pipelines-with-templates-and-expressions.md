@@ -246,7 +246,7 @@ There are many use cases for manipulating the pipeline using templates, avoiding
 * **Pushing notifications** to remote systems when a new stage or deployment job starts or ends, for auditing or updates to service tickets.
 * **Avoid certain pipeline tasks being used** (like the script example discussed above), to ensure a consistent approach, or to help with security concerns.
 * **Restrict deployments** to specific branches to enhance security.
-* **Injecting steps** before or after steps defined in the pipeline run, maybe to get the environment in to a secure or useable state before a pipeline executes it's steps.
+* **Injecting steps** before or after steps defined in the pipeline run, maybe to get the environment in to a secure or useable state before a pipeline executes its steps.
 * **Enforcing a branching strategy** by failing pipelines before they run if the correct branch isn't used. You could also check a pull requests source and target branches at runtime and fail if it's not a correct transition.
 * **Checking with remote services** before deploying to ensure certain checks have been passed before continuing.
 
