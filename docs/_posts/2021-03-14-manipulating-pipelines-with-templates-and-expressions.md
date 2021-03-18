@@ -169,7 +169,7 @@ extends:
 
 The `extends` syntax is used at the top of the pipeline, with any `steps`, `jobs` or `stages` being passed in as parameters, so the template will have access to the entire set of pipeline tasks.
 
-Extension templates can be stored in a shared repository and used within a pipeline of a different repository, which is great for shared company policy templates.
+Extension templates can optionally be stored in a shared repository and used within a pipeline of a different repository, which is great for shared company policy templates.
 
 If you moved our templates file in to a repository called `automation`, we could then implement it by using a repository resource similar to the one below.
 
