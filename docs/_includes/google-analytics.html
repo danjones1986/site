@@ -5,4 +5,11 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', '{{ site.google_analytics }}');
+  function handleShareClick(label) {
+    ga('send', 'event', {
+      eventCategory: 'Post Shared',
+      eventAction: 'click',
+      eventLabel: label
+    });
+  }
 </script>
