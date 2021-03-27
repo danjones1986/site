@@ -191,13 +191,13 @@ git commit -m "devcontainer CI sample"
 Next we will publish to our remote repo (You will want to substitute the GitHub repo with your own).
 
 ```bash
-git remote add origin https://github.com/danjones1986/devcontainers-and-ci.git
+git remote add origin https://github.com/skilledcookie/devcontainers-and-ci.git
 git branch -M main
 git push -u origin main
 ```
 
 
-This should automatically run the CI pipeline, which you can see under "Actions" in the repository. [See this in our GitHub repo now!](https://github.com/danjones1986/devcontainers-and-ci/actions)
+This should automatically run the CI pipeline, which you can see under "Actions" in the repository. [See this in our GitHub repo now!](https://github.com/skilledcookie/devcontainers-and-ci/actions)
 
 ### CI in Azure Pipelines example
 
@@ -255,4 +255,4 @@ It will be interesting to see how the devcontainer landscape evolves once GitHub
 
 ### Source code
 
-The source code for this post can be found at [https://github.com/danjones1986/devcontainers-and-ci](https://github.com/danjones1986/devcontainers-and-ci)
+The source code for this post can be found at [https://github.com/skilledcookie/devcontainers-and-ci](https://github.com/skilledcookie/devcontainers-and-ci)
