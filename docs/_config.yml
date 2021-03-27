@@ -55,3 +55,10 @@ markdown: kramdown
 highlighter: rouge
 
 footer_menu: example_footer_menu
+
+defaults:
+  -
+    scope:
+      path:            "wip/*"
+    values:
+      sitemap:         false
