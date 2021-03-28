@@ -57,8 +57,7 @@ highlighter: rouge
 footer_menu: example_footer_menu
 
 defaults:
-  -
-    scope:
+  - scope:
       path:            "wip/*"
     values:
       sitemap:         false
