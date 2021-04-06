@@ -245,3 +245,6 @@ It will be interesting to see how the devcontainer landscape evolves once GitHub
 
 ### Source code
 The source code for this post can be found at [https://github.com/skilledcookie/devcontainers-and-ci](https://github.com/skilledcookie/devcontainers-and-ci)
+
+### Comments
+Comments can be made on the LinkedIn post here [https://www.linkedin.com/posts/danjones10_devcontainers-and-continuous-integration-activity-6785095135559487488-MUTc](https://www.linkedin.com/posts/danjones10_devcontainers-and-continuous-integration-activity-6785095135559487488-MUTc).
