@@ -3,7 +3,7 @@ layout: post
 title: Devcontainers and Continuous Integration
 subtitle: Azure Pipelines
 description: How to use devcontainers to create a consistent development and continuous integration work flow.
-date: 2021-04-06 09:00:00
+date: 2021-04-06 08:00:00
 author: Dan Jones
 tags: 
 - github-actions 
