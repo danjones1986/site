@@ -1,4 +1,5 @@
 ---
+noIndex: true
 title: Privacy Policy
 layout: page
 date: 2021-03-14 09:00:00

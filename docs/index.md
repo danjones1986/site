@@ -1,6 +1,6 @@
 ---
-title: Software Development Blog
-subtitle: Technical stuff... and... stuff
+title: Technical stuff... and... stuff
+subtitle: Software Development Blog
 description: Yet another software development blog site! With content on Azure DevOps and more, coming soon.
 layout: page
 show_sidebar: true
