@@ -15,7 +15,7 @@ In today’s complex IT environments, integrating multiple systems through a sin
 
 In this post, we’ll explore some of the most common middleware patterns for API integrations, detailing their key features, ideal use cases, and when they might become an anti-pattern.
 
-## 1. API Gateway Pattern
+### 1. API Gateway Pattern
 
 The **API Gateway** is a popular pattern, especially in microservices architectures. It serves as a single entry point for all client requests, handling tasks such as routing, request/response transformation, and security.
 
