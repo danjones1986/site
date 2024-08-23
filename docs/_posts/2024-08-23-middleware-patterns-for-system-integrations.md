@@ -6,6 +6,8 @@ description: In this post, we’ll explore some of the most common middleware pa
 date: 2024-08-23 01:00:00
 author: Dan Jones
 menubar_toc: true
+tags: 
+- architecture
 ---
 
 ### Introduction
