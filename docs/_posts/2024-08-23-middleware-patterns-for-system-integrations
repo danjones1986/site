@@ -5,7 +5,6 @@ subtitle: Architecture
 description: In this post, we’ll explore some of the most common middleware patterns for API integrations, detailing their key features, ideal use cases, and when they might become an anti-pattern.
 date: 2024-08-23 11:00:00
 author: Dan Jones
-tags: architecture integrations api
 menubar_toc: true
 ---
 
